@@ -17,7 +17,7 @@
 <div class="wrap">
 
     <?php
-    get_header();
+        get_header();
     ?>
 
     <main id="primary" class="site-main">
@@ -59,8 +59,8 @@
 
 
     <?php
-    get_sidebar();
-    get_footer();
+        get_sidebar();
+        get_footer();
     ?>
 
 </div>
