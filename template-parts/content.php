@@ -45,8 +45,10 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-        <?php
-            echo '<a href="' . esc_url( get_permalink() ) . '"> Read More » </a>'
-        ?>
+        <p class='small gray'>
+            <?php
+                heather_posted_on()
+            ?>
+        </p>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
