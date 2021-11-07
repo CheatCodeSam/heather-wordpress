@@ -9,27 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				heather_posted_on();
-				heather_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		    the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+        ?>
 	</header><!-- .entry-header -->
 
-	<?php heather_post_thumbnail(); ?>
+	<!-- <?php heather_post_thumbnail(); ?> -->
 
 	<div class="entry-content">
 		<?php
@@ -58,6 +45,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php heather_entry_footer(); ?>
+        <?php
+            echo '<a href="' . esc_url( get_permalink() ) . '"> Read More » </a>'
+        ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
