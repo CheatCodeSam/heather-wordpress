@@ -6,12 +6,11 @@
  *
  * @package Heather
  */
-?>
-<div class="wrap">
 
-    <?php
-        get_header();
-    ?>
+get_header();
+?>
+
+
 
 	<main id="primary" class="site-main">
 
@@ -40,8 +39,10 @@
 
 	</main><!-- #main -->
 
-    <?php
-        get_sidebar();
-    ?>
 
-</div>
+
+
+
+<?php
+        get_sidebar();
+        get_footer();
