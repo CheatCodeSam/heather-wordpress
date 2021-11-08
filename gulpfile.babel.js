@@ -52,7 +52,7 @@ const imagemin = require("gulp-imagemin"); // Minify PNG, JPEG, GIF and SVG imag
 const rename = require("gulp-rename"); // Renames files E.g. style.css -> style.min.css.
 const lineec = require("gulp-line-ending-corrector"); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
 const filter = require("gulp-filter"); // Enables you to work on a subset of the original files by filtering them using a glob.
-const sourcemaps = require("gulp-sourcemaps"); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css).
+const sourcemaps = require("gulp-sourcemaps"); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.sass, which was later combined with other css files to generate style.css).
 const notify = require("gulp-notify"); // Sends message notification to you.
 const browserSync = require("browser-sync").create(); // Reloads browser and injects CSS. Time-saving synchronized browser testing.
 const wpPot = require("gulp-wp-pot"); // For generating the .pot file.
@@ -105,7 +105,7 @@ const reload = (done) => {
  * Compiles Sass, Autoprefixes it and Minifies CSS.
  *
  * This task does the following:
- *    1. Gets the source scss file
+ *    1. Gets the source sass file
  *    2. Compiles Sass to CSS
  *    3. Writes Sourcemaps for it
  *    4. Autoprefixes it and generates style.css
@@ -155,7 +155,7 @@ gulp.task("styles", () => {
  * Compiles Sass, Autoprefixes it, Generates RTL stylesheet, and Minifies CSS.
  *
  * This task does the following:
- *    1. Gets the source scss file
+ *    1. Gets the source sass file
  *    2. Compiles Sass to CSS
  *    4. Autoprefixes it and generates style.css
  *    5. Renames the CSS file with suffix -rtl and generates style-rtl.css
@@ -412,7 +412,7 @@ gulp.task(
 		browsersync,
 		() => {
 			gulp.watch(config.watchPhp, reload); // Reload on PHP file changes.
-			gulp.watch(config.watchStyles, gulp.parallel("styles")); // Reload on SCSS file changes.
+			gulp.watch(config.watchStyles, gulp.parallel("styles")); // Reload on SASS file changes.
 			gulp.watch(config.watchJsVendor, gulp.series("vendorsJS", reload)); // Reload on vendorsJS file changes.
 			gulp.watch(config.watchJsCustom, gulp.series("customJS", reload)); // Reload on customJS file changes.
 			gulp.watch(config.imgSRC, gulp.series("images", reload)); // Reload on customJS file changes.

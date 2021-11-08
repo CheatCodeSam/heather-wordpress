@@ -143,7 +143,10 @@ function heather_scripts() {
 	wp_enqueue_style( 'heather-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'heather-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'heather-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    // vendor scripts. only uncomment if you have files in assets/js/vendor 	
+    // wp_enqueue_script( 'demo-theme-vendor-scripts', get_template_directory_uri() . '/vendor.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'demo-theme-custom-scripts', get_template_directory_uri() . '/custom.min.js', array('customize-preview'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
