@@ -187,7 +187,7 @@ function wpb_add_google_fonts() {
     
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
-function page_nav() {
+function heather_page_nav() {
 
     if (is_singular())
         return;
@@ -210,10 +210,11 @@ function page_nav() {
         $next_post_link = '<span class="gray">Next</span>';
     }
 
-    
+    echo '<div class="center navigation">';
     printf( '<span class="fl"> %s </span>',  $prev_post_link );
     printf( '<span>%s / %s</span>', $paged, $max);
     printf( '<span class="fr"> %s </span>',  $next_post_link );
+    echo '</div>';
 
     
 }

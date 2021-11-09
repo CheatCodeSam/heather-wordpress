@@ -41,17 +41,7 @@ get_header();
 
             endwhile;
 
-
-
-            
-
-            echo '<div class="center">';
-
-            page_nav();
-
-
-            echo '</div>';
-
+            heather_page_nav();
 
         else :
 

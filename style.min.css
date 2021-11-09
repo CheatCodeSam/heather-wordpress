@@ -20,6 +20,7 @@ h1 a{color:#333}
 .fr{float:right}
 .gray{color:#999}
 .entry-content{margin-bottom:32px}
+.navigation{margin-bottom:32px}
 @media screen and (min-width:640px){h1,.h1{font-size:48px}
 h2,.h2{font-size:32px}
 p,.p{font-size:20px}

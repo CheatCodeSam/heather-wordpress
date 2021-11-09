@@ -35,7 +35,7 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			heather_page_nav();
 
 		else :
 
