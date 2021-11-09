@@ -186,3 +186,34 @@ function wpb_add_google_fonts() {
 }
     
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+function page_nav() {
+
+    if (is_singular())
+        return;
+    
+    global $wp_query;
+
+    if($wp_query->max_num_pages <= 1)
+        return;
+
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max = intval( $wp_query->max_num_pages );
+
+    $prev_post_link = get_previous_posts_link("Previous");
+    if ($prev_post_link == "") {
+        $prev_post_link = '<span class="gray">Previous</span>';
+    }
+
+    $next_post_link = get_next_posts_link("Next");
+    if ($next_post_link == "") {
+        $next_post_link = '<span class="gray">Next</span>';
+    }
+
+    
+    printf( '<span class="fl"> %s </span>',  $prev_post_link );
+    printf( '<span>%s / %s</span>', $paged, $max);
+    printf( '<span class="fr"> %s </span>',  $next_post_link );
+
+    
+}

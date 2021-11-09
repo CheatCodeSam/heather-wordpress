@@ -41,7 +41,17 @@ get_header();
 
             endwhile;
 
-            the_posts_navigation();
+
+
+            
+
+            echo '<div class="center">';
+
+            page_nav();
+
+
+            echo '</div>';
+
 
         else :
 
